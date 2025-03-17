@@ -18,7 +18,9 @@ pool.connect((err) => {
 
 // Middleware to serve static HTML
 app.use(express.static("."));
-
+app.get("/", (req, res) => {
+  console.log(2);
+});
 // API Route to Fetch Data
 app.get("/data", (req, res) => {
   pool.query("insert into public.a(column1) vallues ('hey');", (err, results) => {
