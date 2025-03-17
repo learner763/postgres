@@ -3,7 +3,7 @@ import pkg from "pg";
 
 const app = express();
 const port = 4000;
-
+/*
 // PostgreSQL Connection
 const pool = new pkg.Pool({
   connectionString: process.env.Database
@@ -15,7 +15,7 @@ pool.connect((err) => {
   }
   console.log("Connected to PostgreSQL");
 });
-
+*/
 // Middleware to serve static HTML
 app.use(express.static("."));
 app.get("/", (req, res) => {
