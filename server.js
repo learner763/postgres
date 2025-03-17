@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
 // API Route to Fetch Data
 app.get("/data", (req, res) => {
   
-    pool.query("SELECT * FROM public.b;", (err, results) => {
+    pool.query("insert into public.b(column1) values ('hey');", (err, results) => {
       if (err) {
         res.status(500).json({ error: err.message });
         return;
