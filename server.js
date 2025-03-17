@@ -21,7 +21,7 @@ app.use(express.static("."));
 
 // API Route to Fetch Data
 app.get("/data", (req, res) => {
-  pool.query("drop table public.a;", (err, results) => {
+  pool.query("insert into public.a(column1) vallues ('hey');", (err, results) => {
     if (err) {
       res.status(500).json({ error: err.message });
       return;
