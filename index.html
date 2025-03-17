@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL with Express</title>
+</head>
+<body>
+    <h1>Data from MySQL</h1>
+    <button onclick="fetchData()">Load Data</button>
+    <ul id="dataList"></ul>
+
+    <script>
+        function fetchData() {
+            fetch('/data')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    console.log(JSON.stringify(data));
+
+                    const list = document.getElementById('dataList');
+                    list.innerHTML = "";
+                    data.forEach(row => {
+                        const li = document.createElement('li');
+                        li.textContent = JSON.stringify(row);
+                        list.appendChild(li);
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+    </script>
+</body>
+</html>
