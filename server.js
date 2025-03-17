@@ -6,7 +6,7 @@ const port = 4000;
 
 // PostgreSQL Connection
 const pool = new pkg.Pool({
-  connectionString: process.env.Database,
+  connectionString: process.env.Database
 });
 pool.connect((err) => {
   if (err) {
@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 });
 // API Route to Fetch Data
 app.get("/data", (req, res) => {
-  pool.query("insert into public.a(column1) vallues ('hey');", (err, results) => {
+  pool.query("insert into public.a(column1) values ('hey');", (err, results) => {
     if (err) {
       res.status(500).json({ error: err.message });
       return;
