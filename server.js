@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
   res.send(2);
 });
 // API Route to Fetch Data
-app.get("/data", (req, res) => {
+/*app.get("/data", (req, res) => {
   pool.query("insert into public.a(column1) values ('hey');", (err, results) => {
     if (err) {
       res.status(500).json({ error: err.message });
@@ -30,7 +30,7 @@ app.get("/data", (req, res) => {
     }
     res.json(results.rows);
   });
-});
+});*/
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
