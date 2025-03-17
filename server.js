@@ -19,7 +19,7 @@ pool.connect((err) => {
 // Middleware to serve static HTML
 app.use(express.static("."));
 app.get("/", (req, res) => {
-  console.log(2);
+  res.send(2);
 });
 // API Route to Fetch Data
 app.get("/data", (req, res) => {
